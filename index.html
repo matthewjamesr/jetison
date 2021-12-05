@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Jetison - Fly, Survive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jetison is a survival game where the user must
+      fly, shoot, survive">
+    <meta name="author" content="Matthew Reichardt">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+      <div class="ui" id="ui">
+        <div class="noselect" id="sound">Sound</div>
+        <div class="main-menu noselect">
+          <div class="button" id="start">Start</div>
+          <div class="button" id="quit" style="margin-bottom: 70px;">Quit</div>
+        </div>
+      </div>
+      <canvas id="game"></canvas>
+      <audio id="audio" src="./game/Audio/bg.mp3" autoplay></audio>
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+      <script type="module" src="game/main.js"></script>
+  </body>
+</html>
