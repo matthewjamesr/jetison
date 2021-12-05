@@ -2,9 +2,9 @@ const sky = new Image();
 const midground = new Image();
 const farground = new Image();
 
-sky.src = "/game/Sprites/Background/sky_color.png";
-midground.src = "/game/Sprites/Background/mid_ground_cloud_1.png";
-farground.src = "/game/Sprites/Background/farground_cloud_1.png";
+sky.src = "./game/Sprites/Background/sky_color.png";
+midground.src = "./game/Sprites/Background/mid_ground_cloud_1.png";
+farground.src = "./game/Sprites/Background/farground_cloud_1.png";
 
 export default class Background {
 
