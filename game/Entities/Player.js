@@ -1,6 +1,6 @@
 const player_fly_idle = new Image();
 
-player_fly_idle.src = "./game/Sprites/Player/__jet_pack_man_now_weapon_flying_no_movement.png";
+player_fly_idle.src = "./game/Sprites/Player/bg_player.png";
 
 const keys = { // keys to listen to
     ArrowUp: false,
