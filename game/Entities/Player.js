@@ -10,6 +10,8 @@ const keys = { // keys to listen to
     Space: false,
     KeyA: false,
     KeyD: false,
+    Mouse0: false,
+    Tap: false,
 };
 document.addEventListener('keydown', keyEvent);
 document.addEventListener('keyup', keyEvent);
@@ -20,6 +22,22 @@ function keyEvent(e) {
       e.preventDefault();
   }
 }
+
+document.onmousedown = function(e) {
+  keys.Mouse0 = true;
+};
+
+document.onmouseup = function(e) {
+  keys.Mouse0 = false;
+};
+
+document.touchstart = function(e) {
+  keys.Tap = true;
+};
+
+document.touchend = function(e) {
+  keys.Tap = false;
+};
 
 export default class Player {
 
@@ -34,8 +52,8 @@ export default class Player {
     this.column = 1;
     this.scale = 0.20;
     this.speed = 0.6;
-    this.gravity = 8;
-    this.jetpackSpeed = 20
+    this.gravity = 6;
+    this.jetpackSpeed = 15
     this.wobble = 30;
     this.direction = "up";
     this.prepStart = false;
@@ -81,6 +99,7 @@ export default class Player {
       if (!keys.Space) { this.y += this.gravity }
       // Handle user input
       if (keys.Space) { this.y -= this.speed * this.jetpackSpeed }
+      if (keys.Mouse0) { this.y -= this.speed * this.jetpackSpeed * 2 }
       if (keys.ArrowLeft && keys.Space || keys.Space && keys.KeyA && !this.collide) { this.x -= this.speed * this.jetpackSpeed / 2 }
       if (keys.ArrowRight && keys.Space || keys.Space && keys.KeyD ** !this.collide) { this.x += this.speed * this.jetpackSpeed / 2 }
     }

@@ -27,6 +27,13 @@ body {
   height: 100%;
 }
 
+.ui .score {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 22pt;
+}
+
 .ui #sound {
   position: absolute;
   top: 15px;
